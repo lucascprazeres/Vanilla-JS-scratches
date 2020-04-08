@@ -1,4 +1,4 @@
-function validaCpf(cpf) {
+function validadeCpf(cpf) {
     let arrayMul;
     let arraySum
     let digit;
@@ -24,10 +24,20 @@ function validaCpf(cpf) {
     }
 
     function getDigit(sum) {
-        return 11 - sum % 11;
+        const digit =  11 - sum % 11;
+        return digit > 9 ? 0 : digit;
+    }
+
+    function isSequence(array) {
+        const seqArray = array[0].repeat(array.length);
+        return seqArray === array;
     }
 
     const cpfSanitized = sanitizeCpf(cpf);
+    //some validations
+    if (!cpfSanitized) return false;
+    if (isSequence(cpfSanitized)) return false;
+
     const cpfWithoutLast2 = cpfSanitized.slice(0, -2);
     const arrayFromCpf = Array.from(cpfWithoutLast2);
 
