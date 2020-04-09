@@ -1,5 +1,5 @@
 class Cpf {
-    //constructor goes here
+    //constructor goes here!
 
     static validate(cpfInput) {
 
@@ -64,4 +64,4 @@ class Cpf {
     }
 }
 
-console.log(Cpf.validate('018.462.442-85'));
+console.log(Cpf.validate('Your cpf goes here!'));
