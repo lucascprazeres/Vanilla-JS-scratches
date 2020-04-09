@@ -2,27 +2,46 @@ class Form {
     //constructor goes here
 
     static validateRegularField(string) {
-        return string ? true : false;
+        return string ? {val:true} : {val:false,err:'No fields can be empty'};
     }
 
     static validateUserField(string) {
-        if (!string || !this.isInRange(string, 3, 12) || !this.isAlphaNum(string))
-            return false;
+        if (!string) {
+            return {
+                val: false,
+                err: 'No field can be empty!'
+            };
+        }   
+        if (!this.isInRange(string, 3, 12)) {
+            return {
+                val: false,
+                err: 'Field must contain between 3 and 12 caracters'
+            }
+        }
+        if (!this.isAlphaNum(string))
 
-        return true;
+        return {val: true};
     };
 
     static validatePasswordField(string) {
-        if (!string || !this.isInRange(string, 6, 12))
-            return false;
-        
-        return true;
+        if (!string) {
+            return {
+                val:false,
+                err:'No fields can be empty'
+            };
+        }
+        if (!this.isInRange(string, 6, 12)) {
+            return {
+                val:false,
+                err:'Field must contain between 6 and 12 caracters'
+            }; 
+        }
+        return {val:true};
 
     };
 
-    static validateCPFField(inputField) {
-        const inputValue = inputField.value;
-        return Cpf.validate(inputValue);
+    static validateCPFField(cpfString) {
+        return Cpf.validate(cpfString) ? {val:true} : {val:false,err:'No fields can be empty'};
     };
     
     static isInRange(inputValue, min, max) {
@@ -54,19 +73,4 @@ const passwordGroup = document.querySelector('.password-group');
 button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    if (!Form.validateRegularField(nameGroup.querySelector('#nome').value)) {
-        Form.setErrorMessage(nameGroup, "Você deve preencher todos os campos!");
-    }
-
-    if (!Form.validateRegularField(lastNameGroup.querySelector('#sobrenome').value)) {
-        Form.setErrorMessage(lastNameGroup, "Você deve preencher todos os campos!");
-    }
-
-    if (!Form.validateUserField(userGroup.querySelector('#user').value)) {
-        Form.setErrorMessage(userGroup, "Você deve preencher todos os campos!");
-    }
-
-    if (!Form.validatePasswordField(passwordGroup.querySelector('#senha').value)) {
-        Form.setErrorMessage(passwordGroup, "Você deve preencher todos os campos!");
-    }
 });
