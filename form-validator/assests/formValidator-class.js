@@ -52,6 +52,8 @@ const passwordField = document.querySelector('#senha');
 const confirmPasswordField = document.querySelector('#senha-confirm');
 const button = document.querySelector('.btn-enviar');
 
+const nameDiv = document.querySelector('.input-group');
+
 console.log(button);
 
 //validating 'nome'
@@ -59,5 +61,5 @@ button.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (!Form.validateRegularField(nameField.value))
-        Form.setErrorMessage(nameField, "Você deve preencher todos os campos!");
+        Form.setErrorMessage(nameDiv, "Você deve preencher todos os campos!");
 });
