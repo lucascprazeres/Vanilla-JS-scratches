@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 class Cpf {
     //constructor goes here!
 
@@ -67,4 +65,3 @@ class Cpf {
 }
 
 console.log(Cpf.validate('Your cpf goes here!'));
->>>>>>> 871c925... added comment
