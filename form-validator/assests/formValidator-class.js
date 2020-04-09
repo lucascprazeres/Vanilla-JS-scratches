@@ -34,6 +34,30 @@ class Form {
         return string.match(alphaNumExp);
     }
 
+    static setErrorMessage(element, errorMsg) {
+        const errorDiv = document.createElement('div');
+
+        errorDiv.innerText = errorMsg;
+        element.appendChild(errorDiv);
+        console.log(errorDiv);
+    };
+
 };
 
-console.log(Form.validatePasswordField('aaaaa@1111111'));
+const nameField = document.querySelector('#nome');
+const lastNameField = document.querySelector('#sobrenome');
+const CpfField = document.querySelector('#cpf');
+const userField = document.querySelector('#user');
+const passwordField = document.querySelector('#senha');
+const confirmPasswordField = document.querySelector('#senha-confirm');
+const button = document.querySelector('.btn-enviar');
+
+console.log(button);
+
+//validating 'nome'
+button.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (!Form.validateRegularField(nameField.value))
+        Form.setErrorMessage(nameField, "Você deve preencher todos os campos!");
+});
