@@ -4,7 +4,7 @@ class Cpf {
     static validate(cpfInput) {
 
         if (!cpfInput) throw new Error('Missing Value!');
-        if (!this.isSenquence(cpfInput)) return false;
+        if (this.isSenquence(cpfInput)) return false;
 
         const sanitizedCpf = this.sanitize(cpfInput);
 
