@@ -4,11 +4,11 @@ class Cpf {
     static validate(cpfInput) {
 
         if (!cpfInput) throw new Error('Missing Value!');
-        if (this.isSenquence(cpfInput)) throw new Error("Can't validate sequences!");
+        if (!this.isSenquence(cpfInput)) return false;
 
         const sanitizedCpf = this.sanitize(cpfInput);
 
-        if (!sanitizedCpf) throw new TypeError('Value must be a cpf string!');
+        if (!sanitizedCpf && Number(sanitizedCpf) !== 0) throw new TypeError('Value must be a cpf string!');
 
         const cpfWithouLast2Digits = sanitizedCpf.slice(0, -2);
         const arrayFromcpfPrefix = Array.from(cpfWithouLast2Digits);
@@ -63,5 +63,3 @@ class Cpf {
         return string === seq;
     }
 }
-
-console.log(Cpf.validate('Your cpf goes here!'));

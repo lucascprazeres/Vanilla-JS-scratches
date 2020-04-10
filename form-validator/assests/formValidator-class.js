@@ -50,7 +50,7 @@ class validateForm {
     }
 
     validateCpf (cpfField) {
-        if (!Cpf.validate(String(cpfField.value)))
+        if (!Cpf.validate(cpfField.value))
             this.setErrorMessage(cpfField, 'CPF inválido!');
     }
 
