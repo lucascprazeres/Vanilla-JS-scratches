@@ -72,5 +72,5 @@ const passwordGroup = document.querySelector('.password-group');
 //validating 'nome'
 button.addEventListener('click', function (e) {
     e.preventDefault();
-
+    //class will be used here
 });
