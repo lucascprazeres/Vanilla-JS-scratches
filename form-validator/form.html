@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 
     <link rel="stylesheet" href="./assests/form.css">
 </head>
+
 <body>
     <fieldset>
         <h1>Formulário de Cadastro</h1>
@@ -17,41 +19,30 @@
             <li>Campo usuário deverá conter entre 3 e 12 caracteres</li>
             <li>Campo Senha deverá conter entre 6 e 12 caracteres</li>
         </ul>
-        <form class="form-body">
-            <div class="name-group">
-                <label for="nome">Nome:</label>
-                <input type="text", id="nome">
-            </div>
-    
-            <div class="lastname-group">
-                <label for="sobrenome">Sobrenome:</label>
-                <input type="text" id="sobrenome">
-            </div>
-    
-            <div class="cpf-group">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf">
-            </div>
-    
-            <div class="user-group">
-                <label for="user">Usuário:</label>
-                <input type="text" id="user">
-            </div>
-    
-            <div class="password-group">
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha">
-            </div>
-    
-            <div class="confirm-password-group">
-                <label for="senha-confirm">Confirme a senha:</label>
-                <input type="password" id="senha-confirm">
-            </div>
+        <form class="register-form">
+            <label for="nome">Nome:</label>
+            <input type="text" , id="nome">
 
-            <button type="submit", class="btn-enviar">Enviar</button>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome">
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf">
+
+            <label for="user">Usuário:</label>
+            <input type="text" id="user">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha">
+
+            <label for="senha-confirm">Confirme a senha:</label>
+            <input type="password" id="senha-confirm">
+            
+            <button type="submit" , class="btn-enviar">Enviar</button>
         </form>
     </fieldset>
 
     <script src="./assests/formValidator-class.js"></script>
 </body>
+
 </html>
