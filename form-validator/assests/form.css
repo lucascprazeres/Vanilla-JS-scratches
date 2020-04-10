@@ -41,7 +41,7 @@ input, button {
     margin-top: 10px;
 }
 
-.err {
+.err-text {
     color: rgb(240, 60, 60);
     font-size: 13px;
 }
