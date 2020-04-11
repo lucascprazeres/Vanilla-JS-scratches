@@ -34,13 +34,11 @@ h1 {
 .border-control{
     width: 100%;
     text-align: center;
-    margin-top: 40px;
     
 }
 
 .border-control input {
-    width: 50px;
-    margin: 0 5px;
+    width: 80%;
 }
 
 .btn-submit, .btn-copy {
@@ -51,14 +49,4 @@ h1 {
 
     border: none;
     color: #2dbac4; 
-}
-
-.display {
-    height: auto;
-    width: 100%;
-    background: none;
-    border:none;
-}
-.display:focus {
-    border: none;
 }
