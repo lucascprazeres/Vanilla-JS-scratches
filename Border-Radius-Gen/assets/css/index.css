@@ -1,39 +1,42 @@
 body {
-    background-color: #2dbac4;
+    background-color: #6b34eb;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1 {
-    color: aqua;
+    color: ivory;
     text-align: center;
 
     font-size: 50px;
 }
 
+p {
+    margin: 2px;
+}
+
 .painel {
     height: auto;
     max-width: 400px;
-    padding: 50px 0 20px 0;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-
     background-color: ivory;
 
 }
 
 .output-box {
     height: 200px;
-    width: 300px;
-    padding-top: 100px;
+    width: 280px;
+    margin-top: 20px;
     text-align: center;
-    border: 2px solid blueviolet;
+    border: 3px solid blueviolet;
     border-radius: 0; 
 }
 
 .border-control{
     width: 100%;
     text-align: center;
+    color: #6b34eb;
     
 }
 
@@ -43,10 +46,10 @@ h1 {
 
 .btn-submit, .btn-copy {
     bottom: 0;
-    margin: 20px 0;
+    margin: 20px;
     height: 30px;
     width: 70px;
 
-    border: none;
-    color: #2dbac4; 
+    border: 1px solid #6b34eb;
+    color: #6b34eb; 
 }
