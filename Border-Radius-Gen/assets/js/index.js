@@ -2,12 +2,12 @@ class Box {
     constructor() {
         this.box = document.querySelector('textarea');
         this.control = document.querySelector('.border-control');
-        this.catchSubmit();
+        this.catchChange();
         this.catchCopyAction();
     };
 
-    catchSubmit() {
-        this.control.addEventListener('submit', e => {
+    catchChange() {
+        this.control.addEventListener('input', e => {
            this.handleSubmit(e);
         });
     };
