@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'Calculator';
-    src: url('/home/lucas/dev/cursojs/aula53/assets/font/calculator/Calculator.ttf') format('truetype');
-}
-
 body {
     background-color: #59b62b;
 }
@@ -27,7 +22,6 @@ body {
 }
 
 .display {
-    font-family: 'Calculator';
     width: 100%;
     max-width: 270px;
     height: 60px;

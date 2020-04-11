@@ -29,7 +29,7 @@ function Calculator() {
                 setOnDisplay(element.innerText);
             }
 
-            if (element.classList.contains('btn-op') || element.classList.contains('btn-dot')){
+            if (element.classList.contains('btn-op') || element.classList.contains('btn-dot') || element.classList.contains('btn-parentesis')){
                 setOnDisplay(element.innerText);
                 resetSwitch = false;
             }
