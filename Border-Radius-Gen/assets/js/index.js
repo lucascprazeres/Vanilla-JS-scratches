@@ -1,10 +1,9 @@
 class Box {
     constructor() {
-        this.box = document.querySelector('.output-box');
+        this.box = document.querySelector('textarea');
         this.control = document.querySelector('.border-control');
-        this.setInputBtn = document.querySelector('#btn-set');
-
         this.catchSubmit();
+        this.catchCopyAction();
     };
 
     catchSubmit() {
@@ -13,17 +12,56 @@ class Box {
         });
     };
 
-    handleSubmit (e) {
-        e.preventDefault();
-        this.updateCorner();
+    catchCopyAction () {
+        this.control.querySelector('.btn-copy').addEventListener('click', () => {
+            this.copyToClipboard();
+        })
     };
 
-    updateCorner() {
-        this.box.style.borderTopLeftRadius = `${this.getInputValue('left-top')}px`;
-        this.box.style.borderTopRightRadius = `${this.getInputValue('right-top')}px`;
-        this.box.style.borderBottomRightRadius = `${this.getInputValue('right-bottom')}px`;
-        this.box.style.borderBottomLeftRadius = `${this.getInputValue('left-bottom')}px`;
+    handleSubmit (e) {
+        e.preventDefault();
+        this.cleanDisplay();
+        for (let corner of this.control.querySelectorAll('input')) {
+            this.updateCorner(corner.id);
+        }
     };
+
+    copyToClipboard () {
+        this.box.select();
+        this.box.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+    };
+
+    updateCorner(corner) {
+        const inputValue = this.getInputValue(corner);
+        switch (corner) {
+            case 'top-left':
+                this.box.style.borderTopLeftRadius = `${inputValue}px`;
+                break;
+            case 'top-right':
+                this.box.style.borderTopRightRadius = `${inputValue}px`;
+                break;
+            case 'bottom-right':
+                this.box.style.borderBottomRightRadius = `${inputValue}px`;
+                break;
+            case 'bottom-left':
+                this.box.style.borderBottomLeftRadius = `${inputValue}px`;
+                break;
+            default:
+                return;
+        }
+        this.setCornerCssOnDisplay(corner, inputValue);
+    };
+
+    setCornerCssOnDisplay (corner, value) {
+        if (!value) value = 0;
+        this.box.value += `border-${corner}-radius: ${value}px\n`
+    };
+
+    cleanDisplay() {
+        this.box.value = '';
+    };
+
 
     getInputValue(corner) {
         return this.control.querySelector(`#${corner}`).value;

@@ -16,6 +16,7 @@ h1 {
     padding: 50px 0 20px 0;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 
     background-color: ivory;
 
@@ -23,8 +24,9 @@ h1 {
 
 .output-box {
     height: 200px;
-    width: 200px;
-    margin: 0 auto;
+    width: 300px;
+    padding-top: 100px;
+    text-align: center;
     border: 2px solid blueviolet;
     border-radius: 0; 
 }
@@ -37,13 +39,26 @@ h1 {
 }
 
 .border-control input {
-    width: 30px;
-    margin: 0 10px;
+    width: 50px;
+    margin: 0 5px;
 }
 
-#btn-set {
+.btn-submit, .btn-copy {
     bottom: 0;
     margin: 20px 0;
     height: 30px;
     width: 70px;
+
+    border: none;
+    color: #2dbac4; 
+}
+
+.display {
+    height: auto;
+    width: 100%;
+    background: none;
+    border:none;
+}
+.display:focus {
+    border: none;
 }
