@@ -34,7 +34,7 @@ class validateForm {
             }
 
             if (field.id === "nome" || field.id === "sobrenome") {
-                validFlag = this.validateName(field);
+                validFlag = this.validat-eName(field);
                 console.log(validFlag);
             }
 

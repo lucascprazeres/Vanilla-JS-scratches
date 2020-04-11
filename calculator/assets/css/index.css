@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Calculator';
+    src: url('/home/lucas/dev/cursojs/aula53/assets/font/calculator/Calculator.ttf') format('truetype');
+}
+
+body {
+    background-color: #59b62b;
+}
+
+ .corpo-calculadora {
+    background-color: #dedee0;
+    max-width: 300px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+    border: 3px solid #c1e5be;
+
+    margin: auto;
+
+    box-shadow: 15px 15px 8px #19700a;
+}
+
+.header-calculadora {
+    background-color: #fcfcfc;
+    padding: 15px 20px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 4px solid #353535;
+}
+
+.display {
+    font-family: 'Calculator';
+    width: 100%;
+    max-width: 270px;
+    height: 60px;
+    margin: 5px auto;
+    padding: 2px 3px;
+    font-size: 50px;
+    
+    background-color: #525252;
+    color: #ffd726;
+    border-radius: 3px;
+    text-align: right;
+}
+
+::placeholder {
+    color: #ffd726;
+}
+
+.grupo-btn {
+    margin-top: 5px;
+    max-width: 300px;
+}
+
+.row {
+    padding: 5px 5px;
+    text-align: center;
+}
+
+.btn-num, .btn-op, .btn-equal, 
+.btn-parentesis, .btn-dot, 
+.btn-clear, .btn-bksp{
+    width: 50px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 20px;
+
+    background-color: #525252;
+    color: #ffd726;
+
+    display: inline-block;
+    vertical-align: top;
+}
+
+button:active {
+    transform: scale(0.95);
+    border: none;
+}
+
+.btn-op {
+    color: #fcfcfc;
+    background-color: #ed5d52;
+    margin-left: 20px;
+}
+
+.btn-equal {
+    background-color:#1d9fd9;
+    height: 60px;
+    margin-left: 20px;
+}
