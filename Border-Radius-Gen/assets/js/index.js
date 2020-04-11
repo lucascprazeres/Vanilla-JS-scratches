@@ -21,9 +21,8 @@ class Box {
     handleSubmit (e) {
         e.preventDefault();
         this.cleanDisplay();
-        for (let corner of this.control.querySelectorAll('input')) {
-            this.updateCorner(corner.id);
-        }
+        const inputs = this.fetchAndReturnInputs();
+        this.updateAllInputs(inputs);
     };
 
     copyToClipboard () {
@@ -32,30 +31,48 @@ class Box {
         document.execCommand('copy');
     };
 
-    updateCorner(corner) {
-        const inputValue = this.getInputValue(corner);
-        switch (corner) {
-            case 'top-left':
-                this.box.style.borderTopLeftRadius = `${inputValue}px`;
-                break;
-            case 'top-right':
-                this.box.style.borderTopRightRadius = `${inputValue}px`;
-                break;
-            case 'bottom-right':
-                this.box.style.borderBottomRightRadius = `${inputValue}px`;
-                break;
-            case 'bottom-left':
-                this.box.style.borderBottomLeftRadius = `${inputValue}px`;
-                break;
-            default:
-                return;
+    fetchAndReturnInputs() {
+        const horizontalInputs = [];
+        const verticalInputs = [];
+        for (let field of this.control.querySelectorAll('input')) {
+            console.log(...this.getRadiusFromRange(field.value));
+            if (field.classList.contains('horizontal')) {
+                const inputs = this.getRadiusFromRange(field.value);
+                horizontalInputs.push(inputs[0]);
+                horizontalInputs.push(inputs[1]);
+            }
+            if (field.classList.contains('vertical')) {
+                const inputs = this.getRadiusFromRange(field.value);
+                verticalInputs.push(inputs[0]);
+                verticalInputs.push(inputs[1]);
+            }
         }
-        this.setCornerCssOnDisplay(corner, inputValue);
+        console.log(horizontalInputs, verticalInputs);
+        return [horizontalInputs, verticalInputs];
+
     };
 
-    setCornerCssOnDisplay (corner, value) {
-        if (!value) value = 0;
-        this.box.value += `border-${corner}-radius: ${value}px\n`
+    updateAllInputs ([honrizontal, vertical]) {
+        let borderRadius = ''
+        for (let value of honrizontal) {
+            borderRadius += `${value}% `;
+        }
+        borderRadius += '/ '
+        for (let value of vertical) {
+            borderRadius += `${value}% `;
+        }
+        this.box.style.borderRadius = borderRadius;
+        this.setCornerCssOnDisplay(borderRadius);
+    }
+
+    getRadiusFromRange(range) {
+        const secondTerm = 100 - range;
+        return [range, secondTerm];
+        
+    }
+
+    setCornerCssOnDisplay (css) {
+        this.box.value += `border-radius: ${css};`;
     };
 
     cleanDisplay() {
@@ -63,10 +80,6 @@ class Box {
     };
 
 
-    getInputValue(corner) {
-        return this.control.querySelector(`#${corner}`).value;
     };
-
-}
 
 const box = new Box();
