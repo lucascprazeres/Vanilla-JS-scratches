@@ -2,13 +2,13 @@ class Box {
     constructor() {
         this.box = document.querySelector('textarea');
         this.control = document.querySelector('.border-control');
-        this.catchChange();
+        this.catchInputChange();
         this.catchCopyAction();
     };
 
-    catchChange() {
-        this.control.addEventListener('input', e => {
-           this.handleSubmit(e);
+    catchInputChange() {
+        this.control.addEventListener('input', () => {
+           this.handleInputChange();
         });
     };
 
@@ -18,8 +18,7 @@ class Box {
         })
     };
 
-    handleSubmit (e) {
-        e.preventDefault();
+    handleInputChange () {
         this.cleanDisplay();
         const inputs = this.fetchAndReturnInputs();
         this.updateAllInputs(inputs);
