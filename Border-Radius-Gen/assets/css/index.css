@@ -1,0 +1,49 @@
+body {
+    background-color: #2dbac4;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: aqua;
+    text-align: center;
+
+    font-size: 50px;
+}
+
+.painel {
+    height: auto;
+    max-width: 400px;
+    padding: 50px 0 20px 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: ivory;
+
+}
+
+.output-box {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border: 2px solid blueviolet;
+    border-radius: 0; 
+}
+
+.border-control{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    
+}
+
+.border-control input {
+    width: 30px;
+    margin: 0 10px;
+}
+
+#btn-set {
+    bottom: 0;
+    margin: 20px 0;
+    height: 30px;
+    width: 70px;
+}
