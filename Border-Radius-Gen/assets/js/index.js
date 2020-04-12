@@ -34,7 +34,6 @@ class Box {
         const horizontalInputs = [];
         const verticalInputs = [];
         for (let field of this.control.querySelectorAll('input')) {
-            console.log(...this.getRadiusFromRange(field.value));
             if (field.classList.contains('horizontal')) {
                 const inputs = this.getRadiusFromRange(field.value);
                 horizontalInputs.push(inputs[0]);
@@ -46,14 +45,13 @@ class Box {
                 verticalInputs.push(inputs[1]);
             }
         }
-        console.log(horizontalInputs, verticalInputs);
         return [horizontalInputs, verticalInputs];
 
     };
 
-    updateAllInputs ([honrizontal, vertical]) {
+    updateAllInputs ([horizontal, vertical]) {
         let borderRadius = ''
-        for (let value of honrizontal) {
+        for (let value of horizontal) {
             borderRadius += `${value}% `;
         }
         borderRadius += '/ '
