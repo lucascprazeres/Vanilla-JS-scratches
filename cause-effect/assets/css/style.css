@@ -40,10 +40,27 @@
     color: #f3f3f3;
 }
 
+.sidenav .btn-selected {
+    color: #636262;
+    font-weight: bold;
+}
 #main {
     transition: margin-left .5s;
     margin-left: 200px;
     padding-top: 20px;
+}
+
+fieldset {
+    display: none;
+}
+
+.fichas {
+    transition: margin-left .5s;
+    margin-left: 200px;
+}
+
+.img-placeholder {
+    max-width: 150px;
 }
 
 @media screen and (max-height: 450px) {
