@@ -1,3 +1,12 @@
+function createNewPerson(name, address, phone, bday) {
+    return {
+        name: name,
+        address: address,
+        phone: phone,
+        bday: bday
+    };
+}
+
 function openNav() {
     document.getElementsByClassName("sidenav")[0].style.width = "200px";
     document.getElementsByClassName("fichas")[0].style.marginLeft = "200px";
@@ -21,3 +30,6 @@ function refreshPane() {
         document.querySelector(`#${profile.className}`).classList.remove("btn-selected");
     }
 }
+
+
+const people = [];
